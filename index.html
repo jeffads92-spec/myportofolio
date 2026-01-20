@@ -699,293 +699,291 @@
             }
         }
 
-        /* GANTI BAGIAN MOBILE RESPONSIVE DI CSS DENGAN INI */
+        /* Mobile Responsive - OPTIMIZED */
+        @media (max-width: 768px) {
+            .hamburger {
+                display: flex;
+            }
 
-/* Mobile Responsive - OPTIMIZED */
-@media (max-width: 768px) {
-    .hamburger {
-        display: flex;
-    }
+            nav ul {
+                position: fixed;
+                top: 70px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 70px);
+                background: rgba(15, 23, 42, 0.98);
+                flex-direction: column;
+                align-items: center;
+                justify-content: flex-start;
+                padding: 2rem;
+                gap: 2rem;
+                transition: left 0.3s;
+            }
 
-    nav ul {
-        position: fixed;
-        top: 70px;
-        left: -100%;
-        width: 100%;
-        height: calc(100vh - 70px);
-        background: rgba(15, 23, 42, 0.98);
-        flex-direction: column;
-        align-items: center;
-        justify-content: flex-start;
-        padding: 2rem;
-        gap: 2rem;
-        transition: left 0.3s;
-    }
+            nav ul.active {
+                left: 0;
+            }
 
-    nav ul.active {
-        left: 0;
-    }
+            /* Hero Section Mobile */
+            .hero {
+                min-height: auto;
+                padding: 2rem 1rem;
+                margin-top: 70px;
+            }
 
-    /* Hero Section Mobile */
-    .hero {
-        min-height: auto;
-        padding: 2rem 1rem;
-        margin-top: 70px;
-    }
+            .hero h1 {
+                font-size: 2rem;
+                line-height: 1.2;
+                margin-bottom: 1rem;
+            }
 
-    .hero h1 {
-        font-size: 2rem;
-        line-height: 1.2;
-        margin-bottom: 1rem;
-    }
+            .hero .typing-effect {
+                font-size: 1rem;
+                min-height: 30px;
+            }
 
-    .hero .typing-effect {
-        font-size: 1rem;
-        min-height: 30px;
-    }
+            .hero p {
+                font-size: 0.9rem;
+                line-height: 1.6;
+                margin-bottom: 1.5rem;
+            }
 
-    .hero p {
-        font-size: 0.9rem;
-        line-height: 1.6;
-        margin-bottom: 1.5rem;
-    }
+            .cta-buttons {
+                flex-direction: column;
+                width: 100%;
+            }
 
-    .cta-buttons {
-        flex-direction: column;
-        width: 100%;
-    }
+            .btn {
+                width: 100%;
+                padding: 0.875rem 1.5rem;
+                font-size: 0.9rem;
+            }
 
-    .btn {
-        width: 100%;
-        padding: 0.875rem 1.5rem;
-        font-size: 0.9rem;
-    }
+            /* About Section Mobile */
+            .about-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
 
-    /* About Section Mobile */
-    .about-content {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-    }
+            .about-text h3 {
+                font-size: 1.5rem;
+            }
 
-    .about-text h3 {
-        font-size: 1.5rem;
-    }
+            .about-text p {
+                font-size: 0.9rem;
+            }
 
-    .about-text p {
-        font-size: 0.9rem;
-    }
+            .skills-grid {
+                grid-template-columns: 1fr;
+                gap: 0.8rem;
+            }
 
-    .skills-grid {
-        grid-template-columns: 1fr;
-        gap: 0.8rem;
-    }
+            .skill-item {
+                padding: 1rem;
+                font-size: 0.9rem;
+            }
 
-    .skill-item {
-        padding: 1rem;
-        font-size: 0.9rem;
-    }
+            /* Experience Section Mobile */
+            .experience-card {
+                padding: 1.5rem;
+            }
 
-    /* Experience Section Mobile */
-    .experience-card {
-        padding: 1.5rem;
-    }
+            .experience-card h3 {
+                font-size: 1.2rem;
+            }
 
-    .experience-card h3 {
-        font-size: 1.2rem;
-    }
+            .experience-card .company {
+                font-size: 0.9rem;
+            }
 
-    .experience-card .company {
-        font-size: 0.9rem;
-    }
+            .experience-card ul {
+                margin-left: 1rem;
+                font-size: 0.85rem;
+            }
 
-    .experience-card ul {
-        margin-left: 1rem;
-        font-size: 0.85rem;
-    }
+            .experience-card li {
+                margin-bottom: 0.6rem;
+                line-height: 1.5;
+            }
 
-    .experience-card li {
-        margin-bottom: 0.6rem;
-        line-height: 1.5;
-    }
+            .experience-card:hover {
+                transform: translateX(5px) scale(1.01);
+            }
 
-    .experience-card:hover {
-        transform: translateX(5px) scale(1.01);
-    }
+            /* Projects Section Mobile - PERBAIKAN UTAMA */
+            .projects-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+                padding: 0;
+            }
 
-    /* Projects Section Mobile - PERBAIKAN UTAMA */
-    .projects-grid {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
-        padding: 0;
-    }
+            .project-card {
+                max-width: 100%;
+                margin: 0;
+                transform: scale(1);
+            }
 
-    .project-card {
-        max-width: 100%;
-        margin: 0;
-        transform: scale(1);
-    }
+            .project-card:hover {
+                transform: translateY(-5px) scale(1.01);
+            }
 
-    .project-card:hover {
-        transform: translateY(-5px) scale(1.01);
-    }
+            .project-icon {
+                padding: 2rem;
+                font-size: 2.5rem;
+            }
 
-    .project-icon {
-        padding: 2rem;
-        font-size: 2.5rem;
-    }
+            .project-content {
+                padding: 1.2rem;
+            }
 
-    .project-content {
-        padding: 1.2rem;
-    }
+            .project-content h3 {
+                font-size: 1rem;
+                line-height: 1.3;
+                margin-bottom: 0.8rem;
+            }
 
-    .project-content h3 {
-        font-size: 1rem;
-        line-height: 1.3;
-        margin-bottom: 0.8rem;
-    }
+            .project-content p {
+                font-size: 0.85rem;
+                line-height: 1.5;
+                margin-bottom: 0.8rem;
+            }
 
-    .project-content p {
-        font-size: 0.85rem;
-        line-height: 1.5;
-        margin-bottom: 0.8rem;
-    }
+            .project-tags {
+                gap: 0.4rem;
+                margin-bottom: 1rem;
+            }
 
-    .project-tags {
-        gap: 0.4rem;
-        margin-bottom: 1rem;
-    }
+            .tag {
+                font-size: 0.7rem;
+                padding: 0.3rem 0.7rem;
+                white-space: nowrap;
+            }
 
-    .tag {
-        font-size: 0.7rem;
-        padding: 0.3rem 0.7rem;
-        white-space: nowrap;
-    }
+            /* Contact Section Mobile */
+            .contact-content p {
+                font-size: 0.9rem;
+            }
 
-    /* Contact Section Mobile */
-    .contact-content p {
-        font-size: 0.9rem;
-    }
+            .contact-links {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
 
-    .contact-links {
-        grid-template-columns: 1fr;
-        gap: 1rem;
-    }
+            .contact-link {
+                padding: 1.2rem;
+                font-size: 0.9rem;
+            }
 
-    .contact-link {
-        padding: 1.2rem;
-        font-size: 0.9rem;
-    }
+            /* Section Padding Mobile */
+            section {
+                padding: 3rem 1rem;
+            }
 
-    /* Section Padding Mobile */
-    section {
-        padding: 3rem 1rem;
-    }
+            h2 {
+                font-size: 1.8rem;
+                margin-bottom: 2rem;
+            }
 
-    h2 {
-        font-size: 1.8rem;
-        margin-bottom: 2rem;
-    }
+            .scroll-indicator {
+                display: none;
+            }
 
-    .scroll-indicator {
-        display: none;
-    }
+            /* Footer Mobile */
+            footer {
+                padding: 1.5rem 1rem;
+                font-size: 0.85rem;
+            }
+        }
 
-    /* Footer Mobile */
-    footer {
-        padding: 1.5rem 1rem;
-        font-size: 0.85rem;
-    }
-}
+        /* Extra Small Mobile Devices */
+        @media (max-width: 480px) {
+            nav .container {
+                padding: 0 1rem;
+            }
 
-/* Extra Small Mobile Devices */
-@media (max-width: 480px) {
-    nav .container {
-        padding: 0 1rem;
-    }
+            nav .logo {
+                font-size: 1.5rem;
+            }
 
-    nav .logo {
-        font-size: 1.5rem;
-    }
+            .hero {
+                padding: 1.5rem 1rem;
+            }
 
-    .hero {
-        padding: 1.5rem 1rem;
-    }
+            .hero h1 {
+                font-size: 1.8rem;
+            }
 
-    .hero h1 {
-        font-size: 1.8rem;
-    }
+            .hero .typing-effect {
+                font-size: 0.9rem;
+            }
 
-    .hero .typing-effect {
-        font-size: 0.9rem;
-    }
+            .hero p {
+                font-size: 0.85rem;
+            }
 
-    .hero p {
-        font-size: 0.85rem;
-    }
+            .btn {
+                padding: 0.75rem 1.25rem;
+                font-size: 0.85rem;
+            }
 
-    .btn {
-        padding: 0.75rem 1.25rem;
-        font-size: 0.85rem;
-    }
+            h2 {
+                font-size: 1.5rem;
+            }
 
-    h2 {
-        font-size: 1.5rem;
-    }
+            .project-icon {
+                padding: 1.5rem;
+                font-size: 2rem;
+            }
 
-    .project-icon {
-        padding: 1.5rem;
-        font-size: 2rem;
-    }
+            .project-content {
+                padding: 1rem;
+            }
 
-    .project-content {
-        padding: 1rem;
-    }
+            .project-content h3 {
+                font-size: 0.95rem;
+            }
 
-    .project-content h3 {
-        font-size: 0.95rem;
-    }
+            .project-content p {
+                font-size: 0.8rem;
+            }
 
-    .project-content p {
-        font-size: 0.8rem;
-    }
+            .tag {
+                font-size: 0.65rem;
+                padding: 0.25rem 0.6rem;
+            }
 
-    .tag {
-        font-size: 0.65rem;
-        padding: 0.25rem 0.6rem;
-    }
+            .experience-card {
+                padding: 1.2rem;
+            }
 
-    .experience-card {
-        padding: 1.2rem;
-    }
+            .experience-card h3 {
+                font-size: 1.1rem;
+            }
 
-    .experience-card h3 {
-        font-size: 1.1rem;
-    }
+            .experience-card ul {
+                font-size: 0.8rem;
+            }
 
-    .experience-card ul {
-        font-size: 0.8rem;
-    }
+            section {
+                padding: 2.5rem 1rem;
+            }
+        }
 
-    section {
-        padding: 2.5rem 1rem;
-    }
-}
+        /* Landscape Mode Mobile */
+        @media (max-height: 600px) and (orientation: landscape) {
+            .hero {
+                min-height: auto;
+                padding: 2rem 1rem;
+            }
 
-/* Landscape Mode Mobile */
-@media (max-height: 600px) and (orientation: landscape) {
-    .hero {
-        min-height: auto;
-        padding: 2rem 1rem;
-    }
+            .scroll-indicator {
+                display: none;
+            }
 
-    .scroll-indicator {
-        display: none;
-    }
-
-    section {
-        padding: 2rem 1rem;
-    }
-}
+            section {
+                padding: 2rem 1rem;
+            }
+        }
     </style>
 </head>
 <body>
