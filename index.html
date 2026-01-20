@@ -93,7 +93,7 @@
             position: fixed;
             top: 0;
             width: 100%;
-            background: rgba(15, 23, 42, 0.8);
+            background: rgba(15, 23, 42, 0.95);
             backdrop-filter: blur(20px);
             box-shadow: 0 4px 30px rgba(0,0,0,0.3);
             z-index: 1000;
@@ -128,6 +128,20 @@
         @keyframes glow {
             0%, 100% { filter: drop-shadow(0 0 5px rgba(99, 102, 241, 0.5)); }
             50% { filter: drop-shadow(0 0 20px rgba(99, 102, 241, 0.8)); }
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 5px;
+        }
+
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background: var(--white);
+            transition: all 0.3s;
         }
 
         nav ul {
@@ -170,12 +184,13 @@
             align-items: center;
             position: relative;
             overflow: hidden;
+            padding: 2rem;
         }
 
         .hero .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 2rem;
+            width: 100%;
             position: relative;
             z-index: 1;
         }
@@ -185,7 +200,7 @@
         }
 
         .hero h1 {
-            font-size: 4rem;
+            font-size: clamp(2.5rem, 6vw, 4rem);
             margin-bottom: 1rem;
             color: var(--white);
             opacity: 0;
@@ -197,12 +212,12 @@
         }
 
         .hero .typing-effect {
-            font-size: 1.8rem;
+            font-size: clamp(1.2rem, 3vw, 1.8rem);
             margin-bottom: 1rem;
             color: var(--accent);
             opacity: 0;
             animation: fadeInUp 0.8s ease 0.2s forwards;
-            min-height: 60px;
+            min-height: 50px;
         }
 
         .cursor {
@@ -220,11 +235,12 @@
         }
 
         .hero p {
-            font-size: 1.2rem;
+            font-size: clamp(1rem, 2vw, 1.2rem);
             color: rgba(255, 255, 255, 0.9);
             margin-bottom: 2rem;
             opacity: 0;
             animation: fadeInUp 0.8s ease 0.4s forwards;
+            line-height: 1.8;
         }
 
         .cta-buttons {
@@ -232,6 +248,7 @@
             gap: 1rem;
             opacity: 0;
             animation: fadeInUp 0.8s ease 0.6s forwards;
+            flex-wrap: wrap;
         }
 
         .btn {
@@ -243,6 +260,7 @@
             display: inline-block;
             position: relative;
             overflow: hidden;
+            text-align: center;
         }
 
         .btn::before {
@@ -340,17 +358,16 @@
         .container {
             max-width: 1200px;
             margin: 0 auto;
+            width: 100%;
         }
 
         h2 {
-            font-size: 3rem;
+            font-size: clamp(2rem, 5vw, 3rem);
             margin-bottom: 3rem;
             text-align: center;
             color: var(--white);
             position: relative;
-            display: inline-block;
-            left: 50%;
-            transform: translateX(-50%);
+            width: 100%;
         }
 
         h2::after {
@@ -391,7 +408,7 @@
         .about-text h3 {
             color: var(--secondary);
             margin-bottom: 1rem;
-            font-size: 2rem;
+            font-size: clamp(1.5rem, 3vw, 2rem);
         }
 
         .about-text p {
@@ -424,6 +441,7 @@
             border: 1px solid rgba(255, 255, 255, 0.1);
             transition: all 0.3s;
             cursor: pointer;
+            text-align: center;
         }
 
         .skill-item:hover {
@@ -470,7 +488,7 @@
         .experience-card h3 {
             color: var(--secondary);
             margin-bottom: 0.5rem;
-            font-size: 1.5rem;
+            font-size: clamp(1.2rem, 2.5vw, 1.5rem);
         }
 
         .experience-card .company {
@@ -497,7 +515,7 @@
 
         .projects-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 2rem;
         }
 
@@ -556,7 +574,7 @@
         .project-content h3 {
             color: var(--white);
             margin-bottom: 1rem;
-            font-size: 1.4rem;
+            font-size: clamp(1.1rem, 2vw, 1.4rem);
         }
 
         .project-content p {
@@ -606,6 +624,7 @@
         .contact {
             background: rgba(30, 41, 59, 0.5);
             backdrop-filter: blur(10px);
+            padding: 5rem 2rem;
         }
 
         .contact-content {
@@ -615,31 +634,35 @@
         }
 
         .contact-content p {
-            font-size: 1.3rem;
+            font-size: clamp(1rem, 2vw, 1.3rem);
             margin-bottom: 2rem;
             color: rgba(255, 255, 255, 0.9);
+            line-height: 1.8;
         }
 
         .contact-links {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
             margin-top: 3rem;
-            flex-wrap: wrap;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .contact-link {
             background: rgba(255, 255, 255, 0.1);
             backdrop-filter: blur(10px);
-            padding: 1.5rem 2rem;
+            padding: 1.5rem;
             border-radius: 15px;
             color: var(--white);
             text-decoration: none;
-            font-size: 1.1rem;
+            font-size: 1rem;
             transition: all 0.3s;
             border: 1px solid rgba(255, 255, 255, 0.1);
             display: flex;
             align-items: center;
+            justify-content: center;
             gap: 0.8rem;
         }
 
@@ -651,7 +674,7 @@
         }
 
         footer {
-            background: rgba(15, 23, 42, 0.9);
+            background: rgba(15, 23, 42, 0.95);
             backdrop-filter: blur(10px);
             color: rgba(255, 255, 255, 0.7);
             text-align: center;
@@ -670,38 +693,88 @@
             }
         }
 
+        /* Mobile Responsive */
         @media (max-width: 768px) {
+            .hamburger {
+                display: flex;
+            }
+
             nav ul {
-                gap: 1rem;
-                font-size: 0.9rem;
+                position: fixed;
+                top: 70px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 70px);
+                background: rgba(15, 23, 42, 0.98);
+                flex-direction: column;
+                align-items: center;
+                justify-content: flex-start;
+                padding: 2rem;
+                gap: 2rem;
+                transition: left 0.3s;
             }
 
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-
-            .hero .typing-effect {
-                font-size: 1.3rem;
+            nav ul.active {
+                left: 0;
             }
 
             .about-content {
                 grid-template-columns: 1fr;
-            }
-
-            .cta-buttons {
-                flex-direction: column;
-            }
-
-            .contact-links {
-                flex-direction: column;
-            }
-
-            h2 {
-                font-size: 2rem;
+                gap: 2rem;
             }
 
             .skills-grid {
                 grid-template-columns: 1fr;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-links {
+                grid-template-columns: 1fr;
+            }
+
+            section {
+                padding: 3rem 1.5rem;
+            }
+
+            .scroll-indicator {
+                display: none;
+            }
+
+            .hero {
+                min-height: auto;
+                padding-top: 4rem;
+                padding-bottom: 4rem;
+            }
+
+            .experience-card:hover {
+                transform: translateX(5px) scale(1.01);
+            }
+
+            .project-card:hover {
+                transform: translateY(-5px) scale(1.01);
+            }
+        }
+
+        @media (max-width: 480px) {
+            nav .container {
+                padding: 0 1rem;
+            }
+
+            .btn {
+                padding: 0.875rem 2rem;
+                font-size: 0.9rem;
+            }
+
+            .project-icon {
+                padding: 2rem;
+                font-size: 3rem;
+            }
+
+            .project-content {
+                padding: 1.5rem;
             }
         }
     </style>
@@ -712,13 +785,18 @@
 
     <nav>
         <div class="container">
-            <div class="logo">JW</div>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
+            <div class="logo">JWG</div>
+            <div class="hamburger" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul id="navMenu">
+                <li><a href="#home" onclick="closeMenu()">Home</a></li>
+                <li><a href="#about" onclick="closeMenu()">About</a></li>
+                <li><a href="#experience" onclick="closeMenu()">Experience</a></li>
+                <li><a href="#projects" onclick="closeMenu()">Projects</a></li>
+                <li><a href="#contact" onclick="closeMenu()">Contact</a></li>
             </ul>
         </div>
     </nav>
@@ -834,155 +912,175 @@
                         <div class="project-tags">
                             <span class="tag">n8n</span>
                             <span class="tag">OpenAI</span>
-                            <span class="tag">WordPress</span>
-                            <span class="tag">Blogger</span>
-                        </div>
-                        <p><strong>Results:</strong> 95% time reduction, handles 100+ articles daily</p>
-                    </div>
-                </div>
+                            <span <function_calls>
+<invoke name="artifacts">
+<parameter name="command">update</parameter>
+<parameter name="id">portfolio_website</parameter>
+<parameter name="old_str">                            <span class="tag">n8n</span>
+<span class="tag">OpenAI</span>
+<span</parameter>
+<parameter name="new_str">                            <span class="tag">n8n</span>
+<span class="tag">OpenAI</span>
+<span class="tag">WordPress</span>
+<span class="tag">Blogger</span>
+</div>
+<p><strong>Results:</strong> 95% time reduction, handles 100+ articles daily</p>
+</div>
+</div>
 
-                <div class="project-card">
-                    <div class="project-icon">📸</div>
-                    <div class="project-content">
-                        <h3>Stock Photo Metadata Automation</h3>
-                        <p>n8n automation system for populating file metadata with AI-generated titles, keywords, and categories for multiple stock platforms.</p>
-                        <div class="project-tags">
-                            <span class="tag">n8n</span>
-                            <span class="tag">Adobe Stock</span>
-                            <span class="tag">Shutterstock</span>
-                            <span class="tag">API</span>
-                        </div>
-                        <p><strong>Results:</strong> Supports 4 platforms, reduces hours to minutes</p>
+<div class="project-card">
+                <div class="project-icon">📸</div>
+                <div class="project-content">
+                    <h3>Stock Photo Metadata Automation</h3>
+                    <p>n8n automation system for populating file metadata with AI-generated titles, keywords, and categories for multiple stock platforms.</p>
+                    <div class="project-tags">
+                        <span class="tag">n8n</span>
+                        <span class="tag">Adobe Stock</span>
+                        <span class="tag">Shutterstock</span>
+                        <span class="tag">API</span>
                     </div>
+                    <p><strong>Results:</strong> Supports 4 platforms, reduces hours to minutes</p>
                 </div>
+            </div>
 
-                <div class="project-card">
-                    <div class="project-icon">💌</div>
-                    <div class="project-content">
-                        <h3>Digital Invitation Platform</h3>
-                        <p>Complete digital invitation website with RSVP system, admin dashboard, and real-time guest management capabilities.</p>
-                        <div class="project-tags">
-                            <span class="tag">PHP</span>
-                            <span class="tag">MySQL</span>
-                            <span class="tag">JavaScript</span>
-                            <span class="tag">Dashboard</span>
-                        </div>
-                        <p><strong>Results:</strong> 80% admin workload reduction, real-time tracking</p>
+            <div class="project-card">
+                <div class="project-icon">💌</div>
+                <div class="project-content">
+                    <h3>Digital Invitation Platform</h3>
+                    <p>Complete digital invitation website with RSVP system, admin dashboard, and real-time guest management capabilities.</p>
+                    <div class="project-tags">
+                        <span class="tag">PHP</span>
+                        <span class="tag">MySQL</span>
+                        <span class="tag">JavaScript</span>
+                        <span class="tag">Dashboard</span>
                     </div>
+                    <p><strong>Results:</strong> 80% admin workload reduction, real-time tracking</p>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <section id="contact" class="contact">
-        <div class="container">
-            <div class="contact-content">
-                <h2>Let's Work Together</h2>
-                <p>Interested in automation solutions or digital marketing strategies? Let's discuss how I can help your business grow.</p>
-                <a href="mailto:jefriwhy6@gmail.com" class="btn btn-primary"><span>Email Me</span></a>
-                <div class="contact-links">
-                    <a href="mailto:jefriwhy6@gmail.com" class="contact-link">
-                        <span>📧</span>
-                        <span>jefriwhy6@gmail.com</span>
-                    </a>
-                    <a href="https://linkedin.com/in/jefri-wahyun8n" target="_blank" class="contact-link">
-                        <span>💼</span>
-                        <span>LinkedIn</span>
-                    </a>
-                    <a href="#" class="contact-link">
-                        <span>📍</span>
-                        <span>Bogor City, West Java</span>
-                    </a>
-                </div>
+<section id="contact" class="contact">
+    <div class="container">
+        <div class="contact-content">
+            <h2>Let's Work Together</h2>
+            <p>Interested in automation solutions or digital marketing strategies? Let's discuss how I can help your business grow.</p>
+            <a href="mailto:jefriwhy6@gmail.com" class="btn btn-primary"><span>Email Me</span></a>
+            <div class="contact-links">
+                <a href="mailto:jefriwhy6@gmail.com" class="contact-link">
+                    <span>📧</span>
+                    <span>jefriwhy6@gmail.com</span>
+                </a>
+                <a href="https://linkedin.com/in/jefri-wahyun8n" target="_blank" class="contact-link">
+                    <span>💼</span>
+                    <span>LinkedIn</span>
+                </a>
+                <a href="#" class="contact-link">
+                    <span>📍</span>
+                    <span>Bogor City, West Java</span>
+                </a>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <footer>
-        <p>&copy; 2026 Jefri Wahyu Gunawan. All rights reserved.</p>
-    </footer>
+<footer>
+    <p>&copy; 2026 Jefri Wahyu Gunawan. All rights reserved.</p>
+</footer>
 
-    <script>
-        // Typing effect
-        const texts = [
-            'Workflow Automation Specialist',
-            'Digital Marketing Expert',
-            'n8n Developer',
-            'Automation Enthusiast'
-        ];
-        let textIndex = 0;
-        let charIndex = 0;
-        let isDeleting = false;
-        const typedText = document.getElementById('typed-text');
+<script>
+    // Mobile menu toggle
+    function toggleMenu() {
+        const navMenu = document.getElementById('navMenu');
+        navMenu.classList.toggle('active');
+    }
 
-        function type() {
-            const current = texts[textIndex];
-            
-            if (isDeleting) {
-                typedText.textContent = current.substring(0, charIndex - 1);
-                charIndex--;
-            } else {
-                typedText.textContent = current.substring(0, charIndex + 1);
-                charIndex++;
-            }
+    function closeMenu() {
+        const navMenu = document.getElementById('navMenu');
+        navMenu.classList.remove('active');
+    }
 
-            if (!isDeleting && charIndex === current.length) {
-                setTimeout(() => isDeleting = true, 2000);
-            } else if (isDeleting && charIndex === 0) {
-                isDeleting = false;
-                textIndex = (textIndex + 1) % texts.length;
-            }
+    // Typing effect
+    const texts = [
+        'Workflow Automation Specialist',
+        'Digital Marketing Expert',
+        'n8n Developer',
+        'Automation Enthusiast'
+    ];
+    let textIndex = 0;
+    let charIndex = 0;
+    let isDeleting = false;
+    const typedText = document.getElementById('typed-text');
 
-            const speed = isDeleting ? 50 : 100;
-            setTimeout(type, speed);
+    function type() {
+        const current = texts[textIndex];
+        
+        if (isDeleting) {
+            typedText.textContent = current.substring(0, charIndex - 1);
+            charIndex--;
+        } else {
+            typedText.textContent = current.substring(0, charIndex + 1);
+            charIndex++;
         }
 
-        setTimeout(type, 1000);
-
-        // Create floating particles
-        const particlesContainer = document.getElementById('particles');
-        for (let i = 0; i < 30; i++) {
-            const particle = document.createElement('div');
-            particle.className = 'particle';
-            particle.style.width = Math.random() * 5 + 2 + 'px';
-            particle.style.height = particle.style.width;
-            particle.style.left = Math.random() * 100 + '%';
-            particle.style.animationDelay = Math.random() * 15 + 's';
-            particle.style.animationDuration = (Math.random() * 10 + 10) + 's';
-            particlesContainer.appendChild(particle);
+        if (!isDeleting && charIndex === current.length) {
+            setTimeout(() => isDeleting = true, 2000);
+        } else if (isDeleting && charIndex === 0) {
+            isDeleting = false;
+            textIndex = (textIndex + 1) % texts.length;
         }
 
-        // Intersection Observer for scroll animations
-        const observerOptions = {
-            threshold: 0.2,
-            rootMargin: '0px 0px -100px 0px'
-        };
+        const speed = isDeleting ? 50 : 100;
+        setTimeout(type, speed);
+    }
 
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, observerOptions);
+    setTimeout(type, 1000);
 
-        document.querySelectorAll('.about-text, .skills-grid, .experience-card, .project-card').forEach(el => {
-            observer.observe(el);
+    // Create floating particles
+    const particlesContainer = document.getElementById('particles');
+    for (let i = 0; i < 30; i++) {
+        const particle = document.createElement('div');
+        particle.className = 'particle';
+        particle.style.width = Math.random() * 5 + 2 + 'px';
+        particle.style.height = particle.style.width;
+        particle.style.left = Math.random() * 100 + '%';
+        particle.style.animationDelay = Math.random() * 15 + 's';
+        particle.style.animationDuration = (Math.random() * 10 + 10) + 's';
+        particlesContainer.appendChild(particle);
+    }
+
+    // Intersection Observer for scroll animations
+    const observerOptions = {
+        threshold: 0.2,
+        rootMargin: '0px 0px -100px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
         });
+    }, observerOptions);
 
-        // Smooth scroll
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
+    document.querySelectorAll('.about-text, .skills-grid, .experience-card, .project-card').forEach(el => {
+        observer.observe(el);
+    });
+
+    // Smooth scroll
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
         });
-    </script>
+    });
+</script>
 </body>
 </html>
